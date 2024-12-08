@@ -1,0 +1,184 @@
+<div class="form-check form-switch mt-2 ms-5">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="toggleTheme($event)"
+        [checked]="theme === 'dark'" />
+    <label class="form-check-label" for="flexSwitchCheckDefault">
+        {{ theme === 'dark' ? 'Dark Mode' : 'Light Mode' }} <span class="ps-1 pe-1 bg-danger rounded">Beta Version</span>
+    </label>
+</div>
+<section class="custom_padding">
+    <div class="rounded sample" [ngClass]="{'sample-dark-theme': theme === 'light'}">
+        <h1 class="text-center mt-3 mb-3 new_amsterdam_custom_font font_heading_custom_size">Hi I'm Nizar Ahamed,
+            Creative
+            Web Developer & Designer</h1>
+    
+        <div class="row">
+            <div class="col-lg-4 d-flex flex-column justify-content-between">
+                <div class="p-2 ">
+                    <h5 class="new_amsterdam_custom_font mb-0 pb-0">All praise and Thanks be to almighty </h5>
+                    <p class="text-justify mb-0" style="font-size: 13px;">
+                        Welcome to my portfolio! Explore my journey, skills, and passions, with projects that reflect my
+                        commitment
+                        to creativity. Check out my background, hobbies, and favorite works. <span class="fw-bold">Don't
+                            forget to
+                            connect with me on social media using the buttons below (Instagram, LinkedIn,
+                            GitHub).</span> Thanks for
+                        visiting!
+                    </p>
+                    <button class="btn btn-light btn-sm mt-2" [ngClass]="{'btn-dark': theme === 'light'}" (click)="scrollToIntro()">Get Started &nbsp;
+                        <i class="fa-solid fa-angles-down "></i></button> 
+                </div>
+                <div class="p-2 cursor-pointer">
+                    <a href="https://www.instagram.com/trynowcode.me/" target="_blank" style="text-decoration: none;">
+                        <i class="fa-brands fa-instagram fs-3 p-1 mt-2 rounded text-white cursor-pointer"
+                            style="background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);"></i>&nbsp;
+                    </a>
+                    <a href="https://www.linkedin.com/in/nizar-ahamed-68a2311b5/" target="_blank"
+                        style="text-decoration: none;">
+                        <i class="fa-brands fa-linkedin-in fs-3 p-1 mt-2 rounded text-white"
+                            style="background-color: #007bb5;"></i>&nbsp;
+                    </a>
+                    <a href="https://github.com/snizarahamed" target="_blank" style="text-decoration: none;">
+                        <i class="fa-brands fa-github fs-3 p-1 mt-2 border rounded text-white"
+                            style="background-color: #242424;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4"><img src="assets/me1.png" style="width:100%;"></div>
+            <div class="col-lg-4 d-flex flex-column justify-content-between">
+                <div class="card m-2  fs-5 new_amsterdam_custom_font bg-black text-white"
+                    style="overflow: hidden; white-space: nowrap;" >
+                    <div class="animated-scroll ">
+                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
+                        <i class="fa-solid fa-lightbulb"></i>&nbsp;Personal portfolio
+                        <i class="fa-solid fa-head-side-virus"></i>&nbsp;Personal portfolio
+                        <i class="fa-regular fa-eye"></i>&nbsp;Personal portfolio
+                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
+                        <i class="fa-solid fa-lightbulb"></i>&nbsp;Personal portfolio
+                        <i class="fa-solid fa-head-side-virus"></i>&nbsp;Personal portfolio
+                        <i class="fa-regular fa-eye"></i>&nbsp;Personal portfolio
+                    </div>
+
+                </div>
+
+
+
+                <div class="p-2">
+                    <button class="btn btn-light btn-sm" [ngClass]="{'btn-dark': theme === 'light'}" (click)="openResume()">Resume <i
+                            class="fa-solid fa-eye"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-light btn-sm" [ngClass]="{'btn-dark': theme === 'light'}" (click)="scrollTocontact()">Contact <i class="fa-solid fa-address-book"></i></button>
+                    <p class="text-justify mb-0 mt-2" style="font-size: 13px;">
+                        For the buttons above, the first one allows you to download my resume with just a click, giving
+                        you quick access to my professional background and skills. The second button will reveal my
+                        contact details, making it easy for you to get in touch. Thank you for your interest.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="main-banner-shape">
+        <div class="shape-1"><img src="assets/Angular.png" alt="image" style="width: 200%;"></div>
+        <div class="shape-2 "><img src="assets/bootstrap.png" alt="image" style="width: 200%;"></div>
+        <div class="shape-3"><img src="assets/html.png" alt="image" style="width: 200%;"></div>
+    </div>
+</section>
+
+<section class="custom_padding" id="intro" #intro>
+    <app-shortcut></app-shortcut>
+</section>
+
+
+
+<section class="custom_padding text-center sample"  [ngClass]="{'sample-dark-theme': theme === 'light'}">
+    <app-website></app-website>
+</section>
+<br>
+<section class="custom_padding">
+
+    <h1 class="new_amsterdam_custom_font mb-0 pb-0 text-center mb-3">Education</h1>
+
+<div style="position: relative;">
+
+  <img src="assets/Education.jpg" width="100%" class="card">
+
+  <div class="card col-5 p-2 m-3 mt-4 display_none_mobile " style="position: absolute;top:0;">
+    <h1 class="new_amsterdam_custom_font mb-0 pb-0">Nizar Ahamed, B.Sc. IT and M.Sc. CS</h1>
+    <hr class="mt-0 pt-0">
+
+    <p>
+      I completed my <strong>Undergraduate (UG) degree in 2020</strong> and my <strong>Postgraduate (PG) degree in
+        2022</strong>. Shortly after, I joined a company the same year.
+    </p>
+
+    <p>College life was a blend of fun, learning, and unforgettable experiences. I stayed in Trichy for my studies, and
+      it was the first time I lived away from my hometown.
+    </p>
+    <p>Living in Trichy taught me valuable life lessons. The city and my college played a significant role in shaping
+      who I am today, both personally and professionally.
+    </p>
+
+
+  </div>
+
+  <div class="card col-5 p-2 pb-3 m-3 mb-4 display_none_mobile" style="position: absolute;bottom: 0;right: 0;">
+    <h1 class="new_amsterdam_custom_font mb-0 pb-0">Academic Background</h1>
+    <hr class="mt-0 pt-0">
+    <p class="mb-0 text-dark fw-semibold">Bachelor of Science in Information Technology &nbsp;<span
+        class="text-secondary">2017 - 2020</span>
+
+    </p>
+    <span class="" style="font-size: 12px;">Jamal Mohamed College
+    </span>
+
+    <p class="mb-0 text-dark fw-semibold mt-3">Master of Science in Computer Science &nbsp;<span
+        class="text-secondary">2020 - 2022</span>
+
+    </p>
+    <span class="" style="font-size: 12px;">Jamal Mohamed College
+    </span>
+  </div>
+
+</div>
+
+<br>
+<div class="border rounded glass  p-2 m-lg-3 mt-4 mb-2 display_none_desktop">
+  <h1 class="new_amsterdam_custom_font mb-0 pb-0">Nizar Ahamed, B.Sc. IT and M.Sc. CS</h1>
+  <hr class="mt-0 pt-0">
+
+  <p>
+    I completed my <strong>Undergraduate (UG) degree in 2020</strong> and my <strong>Postgraduate (PG) degree in
+      2022</strong>. Shortly after, I joined a company the same year.
+  </p>
+
+  <p>College life was a blend of fun, learning, and unforgettable experiences. I stayed in Trichy for my studies, and it
+    was the first time I lived away from my hometown.
+  </p>
+  <p>Living in Trichy taught me valuable life lessons. The city and my college played a significant role in shaping who
+    I am today, both personally and professionally.
+  </p>
+
+
+</div>
+
+<div class="border rounded glass p-2 pb-3 m-lg-3 mb-4 display_none_desktop">
+  <h1 class="new_amsterdam_custom_font mb-0 pb-0">Academic Background</h1>
+  <hr class="mt-0 pt-0">
+  <p class="mb-0  fw-semibold">Bachelor of Science in Information Technology &nbsp;<span
+      class="text-secondary float-end">2017 - 2020</span>
+
+  </p>
+  <span class="" style="font-size: 12px;">Jamal Mohamed College
+  </span>
+
+  <p class="mb-0 fw-semibold mt-3">Master of Science in Computer Science &nbsp;<span
+      class="text-secondary ms-auto">2020 - 2022</span>
+
+  </p>
+  <span class="" style="font-size: 12px;">Jamal Mohamed College
+  </span>
+</div>
+</section>
+
+<section class="custom_padding pt-5 Contact_bg" [ngClass]="{'Contact_bg_dark': theme === 'light'}" #contact>
+    <app-contact></app-contact>
+</section>
+
