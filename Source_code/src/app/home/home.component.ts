@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
-
+import { Component, ElementRef, ViewChild, HostListener,OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,10 +6,12 @@ import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
   templateUrl: './home.component.html',
   
 })
-export class HomeComponent {
-  theme: string = 'light';
+export class HomeComponent implements OnInit{
+  theme: string = 'dark';
   @ViewChild('intro') introSection!: ElementRef;
   @ViewChild('contact') contactSection!: ElementRef;
+
+   constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     const savedTheme = localStorage.getItem('theme');
@@ -18,6 +19,28 @@ export class HomeComponent {
       this.theme = savedTheme;
       this.applyTheme(this.theme);
     }
+
+        this.scrollTrigger(); // run on load
+
+  }
+
+    @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrollTrigger();
+  }
+
+  private scrollTrigger() {
+    const elements = this.el.nativeElement.querySelectorAll('.fade-in-up,.fade-in-up-icon,.slide-in-left,.slide-in-right');
+    elements.forEach((el: HTMLElement) => {
+      const rect = el.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight - 100;
+
+      if (inView && !el.classList.contains('show')) {
+        const delay = el.getAttribute('data-delay') || '0s';
+        el.style.transitionDelay = delay;
+        el.classList.add('show');
+      }
+    });
   }
 
    
@@ -25,7 +48,7 @@ export class HomeComponent {
 
   toggleTheme(event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
-    const theme = isChecked ? 'dark' : 'light';
+    const theme = isChecked ? 'light' : 'dark';
     this.theme = theme;
     this.applyTheme(theme);
     localStorage.setItem('theme', theme);

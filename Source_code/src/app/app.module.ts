@@ -8,6 +8,9 @@ import { ShortcutComponent } from './home/shortcut.component';
 import { WebsiteComponent } from './home/website.component';
 import { ContactComponent } from './home/contact.component';
 import { FormsModule } from '@angular/forms';
+import { SkillsComponent } from './home/skills.component';
+import { ProjectComponent } from './home/project.component';
+import { HeroAvatarComponent } from './home/hero-avatar.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ShortcutComponent,
     WebsiteComponent,
-    ContactComponent
+    ContactComponent,
+    SkillsComponent,
+    ProjectComponent,
+    HeroAvatarComponent
   ],
   imports: [
     BrowserModule,
