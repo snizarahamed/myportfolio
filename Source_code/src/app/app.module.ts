@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { SkillsComponent } from './home/skills.component';
 import { ProjectComponent } from './home/project.component';
 import { HeroAvatarComponent } from './home/hero-avatar.component';
+import { LifeStagesComponent } from './home/life-stages.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HeroAvatarComponent } from './home/hero-avatar.component';
     ContactComponent,
     SkillsComponent,
     ProjectComponent,
-    HeroAvatarComponent
+    HeroAvatarComponent,
+    LifeStagesComponent
   ],
   imports: [
     BrowserModule,
