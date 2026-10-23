@@ -83,6 +83,12 @@ export class HomeComponent implements OnInit{
     }
   }
 
+  @HostListener('window:toggle-theme')
+onBallToggle() {
+  this.theme = this.theme === 'dark' ? 'light' : 'dark';
+  this.applyTheme(this.theme);
+  localStorage.setItem('theme', this.theme);
+}
 
 
 
