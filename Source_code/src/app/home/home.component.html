@@ -1,117 +1,90 @@
-<div class="form-check form-switch mt-2 ms-5">
+<!-- NAVBAR -->
+<nav class="hero-nav fade-in-up" data-delay="0.1s">
 
-    <!-- <label class="form-check-label" for="flexSwitchCheckDefault">
-        {{ theme === 'dark' ? 'Dark Mode' : 'Light Mode' }} <span class="ps-1 pe-1 bg-danger rounded">Beta
-            Version</span>
-    </label> -->
-
-    <label class="form-check-label" for="flexSwitchCheckDefault">
+  <!-- logo place: switch + brand -->
+  <div class="hero-brand">
+    <div class="form-check form-switch m-0 hero-switch">
+      <label class="form-check-label" for="flexSwitchCheckDefault">
         <i *ngIf="theme !== 'dark'" class="fa-solid fa-sun text-warning"></i>
         <i *ngIf="theme === 'dark'" class="fa-solid fa-moon text-white"></i>
-    </label>
+      </label>
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+        (change)="toggleTheme($event)" [checked]="theme === 'light'" />
+    </div>
+    <span class="hero-brand-text new_amsterdam_custom_font">NIZAR</span>
+  </div>
 
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="toggleTheme($event)"
-        [checked]="theme === 'light'" />
-</div>
+  <!-- all section links -->
+  <ul class="hero-links">
+    <li><a role="button" (click)="scrollToIntro()">Intro</a></li>
+    <li><a role="button" (click)="scrollToSection('skills')">Skills</a></li>
+    <li><a role="button" (click)="scrollToSection('website')">Websites</a></li>
+    <li><a role="button" (click)="scrollToSection('projects')">Projects</a></li>
+    <li><a role="button" (click)="scrollToSection('education')">Education</a></li>
+    <li><a role="button" (click)="scrollToSection('life')">Journey</a></li>
+    <li><a role="button" (click)="scrollTocontact()">Contact</a></li>
+  </ul>
+
+  <!-- social icons -->
+  <div class="hero-social">
+    <a href="https://www.instagram.com/trynowcode.me/" target="_blank" class="soc"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/nizar-ahamed-68a2311b5/" target="_blank" class="soc"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/snizarahamed" target="_blank" class="soc"><i class="fa-brands fa-github"></i></a>
+  </div>
+</nav>
+  
 <section class="custom_padding">
-    <div class="rounded border glass">
-        <h1 class="text-center mt-3 mb-3 new_amsterdam_custom_font font_heading_custom_size fade-in-up">Hi I'm Nizar
-            Ahamed,
-            Creative
-            Developer & Designer</h1>
+  <div class="hero-wrap">
+    <div class="hero-card">
 
-        <div class="row">
-            <div class="col-lg-4 d-flex flex-column justify-content-between">
-                <div class="p-2 fade-in-up" data-delay="0.8s">
-                    <h5 class="new_amsterdam_custom_font mb-0 pb-0 ">All praise and thanks to the almighty </h5>
-                    <p class="text-justify mb-0 " style="font-size: 13px;">
-                        Welcome to my portfolio! Explore my journey, skills, and passions, with projects that reflect my
-                        commitment
-                        to creativity. Explore my background, hobbies, and selected works. <span class="fw-bold">Don't
-                            forget to
-                            connect with me on social media using the buttons below (Instagram, LinkedIn,
-                            GitHub).</span> Thanks for
-                        visiting!
-                    </p>
-                    <button class="btn btn-light btn-sm mt-2 " [ngClass]="{'btn-dark': theme === 'light'}"
-                        (click)="scrollToIntro()">Get Started &nbsp;
-                        <i class="fa-solid fa-angles-down "></i></button>
-                </div>
-                <div class="p-2 cursor-pointer">
-                    <a href="https://www.instagram.com/trynowcode.me/" target="_blank" style="text-decoration: none;"
-                        class="fade-in-up" data-delay="1.5s">
-                        <i class="fa-brands fa-instagram fs-3 p-1 mt-2 rounded text-white cursor-pointer"
-                            style="background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);"></i>&nbsp;
-                    </a>
-                    <a href="https://www.linkedin.com/in/nizar-ahamed-68a2311b5/" target="_blank"
-                        style="text-decoration: none;" class="fade-in-up" data-delay="1.7s">
-                        <i class="fa-brands fa-linkedin-in fs-3 p-1 mt-2 rounded text-white"
-                            style="background-color: #007bb5;"></i>&nbsp;
-                    </a>
-                    <a href="https://github.com/snizarahamed" target="_blank" style="text-decoration: none;"
-                        class="fade-in-up" data-delay="1.9s">
-                        <i class="fa-brands fa-github fs-3 p-1 mt-2 border rounded text-white"
-                            style="background-color: #242424;"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <!-- <img src="assets/me1.png" style="width:100%;" class="fade-in-up overflow-auto" data-delay="0.3s"> -->
-                <app-hero-avatar class="fade-in-up" data-delay="0.3s"></app-hero-avatar>
-            </div>
-            <div class="col-lg-4 d-flex flex-column justify-content-between">
-                <div class="card m-2  fs-5 new_amsterdam_custom_font bg-black text-white fade-in-up" data-delay="0.9s"
-                    style="overflow: hidden; white-space: nowrap;">
-                    <!-- <div class="animated-scroll ">
-                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-lightbulb"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-head-side-virus"></i>&nbsp;Personal portfolio
-                        <i class="fa-regular fa-eye"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-lightbulb"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-head-side-virus"></i>&nbsp;Personal portfolio
-                        <i class="fa-regular fa-eye"></i>&nbsp;Personal portfolio
-                    </div> -->
-                    <div class="animated-scroll">
-                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
-                        <i class="fa-solid fa-code"></i>&nbsp;Software Developer
-                        <i class="fa-solid fa-lightbulb"></i>&nbsp;Creative Thinker
-                        <i class="fa-solid fa-brain"></i>&nbsp;AI Enthusiast
-                        <i class="fa-solid fa-laptop-code"></i>&nbsp;Web Developer
-                        <i class="fa-solid fa-code"></i>&nbsp;Software Developer
-                        <i class="fa-solid fa-brain"></i>&nbsp;AI Enthusiast
-                        <i class="fa-solid fa-laptop-code"></i>&nbsp;Web Developer
-                        <i class="fa-solid fa-code"></i>&nbsp;Personal portfolio
-                    </div>
-                </div>
+      <!-- big background word -->
+      <h1 class="hero-bg-word new_amsterdam_custom_font">DEVELOPER</h1>
 
+      <!-- avatar -->
+      <div class="hero-avatar">
+        <app-hero-avatar class="fade-in-up" data-delay="0.3s"></app-hero-avatar>
+      </div>
 
+      <!-- purple script name (avatar mela overlap aagum) -->
+      <div class="hero-name">
+        <span class="fade-in-up" data-delay="0.5s">I'm Nizar</span>
+        <span class="fade-in-up" data-delay="0.7s">Ahamed</span>
+      </div>
 
-                <div class="p-2 fade-in-up" data-delay="1.2s">
-                    <button class="btn btn-light btn-sm" [ngClass]="{'btn-dark': theme === 'light'}"
-                        (click)="openResume()">Resume <i class="fa-solid fa-eye"></i></button>&nbsp;&nbsp;
-                    <button class="btn btn-light btn-sm" [ngClass]="{'btn-dark': theme === 'light'}"
-                        (click)="scrollTocontact()">Contact <i class="fa-solid fa-address-book"></i></button>
-                    <p class="text-justify mb-0 mt-2" style="font-size: 13px;">
-                        For the buttons above, the first one allows you to download my resume with just a click, giving
-                        you quick access to my professional background and skills. The second button will reveal my
-                        contact details, making it easy for you to get in touch. Thank you for your interest.</p>
-                </div>
-            </div>
+      <!-- handwritten sub text -->
+<div class="hero-sub fade-in-up" data-delay="0.9s">All praise and thanks to the almighty</div>
+      <!-- bottom left: welcome text -->
+      <div class="hero-left fade-in-up" data-delay="1.1s">
+       <p>
+  Welcome to my portfolio! Explore my journey, skills, and passions, with projects that reflect my
+  commitment to creativity. Explore my background, hobbies, and selected works. Don't forget to connect
+  with me on social media using the icons at the top (Instagram, LinkedIn, GitHub). Thanks for visiting!
+</p>
+        <button class="btn btn-sm btn-light" [ngClass]="{'btn-dark': theme === 'light'}" (click)="scrollToIntro()">
+          Get Started &nbsp;<i class="fa-solid fa-angles-down"></i>
+        </button>
+      </div>
 
+      <!-- bottom right: glass card -->
+      <div class="hero-right fade-in-up" data-delay="1.3s">
+        <div class="mb-2">
+          <button class="btn btn-sm btn-light" [ngClass]="{'btn-dark': theme === 'light'}" (click)="openResume()">
+            Resume <i class="fa-solid fa-eye"></i></button>&nbsp;
+          <button class="btn btn-sm btn-light" [ngClass]="{'btn-dark': theme === 'light'}" (click)="scrollTocontact()">
+            Contact <i class="fa-solid fa-address-book"></i></button>
         </div>
+        <p>
+          For the buttons above, the first one allows you to download my resume with just a click, giving you
+          quick access to my professional background and skills. The second button will reveal my contact
+          details, making it easy for you to get in touch. Thank you for your interest.
+        </p>
+      </div>
+
     </div>
-    <div class="main-banner-shape">
-        <div class="shape-1 fade-in-up" data-delay="2.2s"><img src="assets/Ng.svg" alt="image" style="width: 200%;">
-        </div>
-        <div class="shape-2 fade-in-up" data-delay="2.5s"><img src="assets/CSS.svg" alt="image" style="width: 200%;">
-        </div>
-        <div class="shape-3 fade-in-up" data-delay="2.7s"><img src="assets/C_code.svg" alt="image" style="width: 200%;">
-        </div>
-    </div>
+  </div>
 </section>
 
-<section class="custom_padding">
+<section class="custom_padding" id="skills">
     <app-skills></app-skills>
 </section>
 
@@ -119,15 +92,15 @@
     <app-shortcut></app-shortcut>
 </section>
 
-<section class="custom_padding text-center border">
+<section class="custom_padding text-center border" id="website">
     <app-website></app-website>
 </section>
 
-<section class="custom_padding">
+<section class="custom_padding"  id="projects">
     <app-project></app-project>
 </section>
 <br>
-<section class="custom_padding">
+<section class="custom_padding"  id="education">
 
     <h1 class="new_amsterdam_custom_font mb-0 pb-0 text-center mb-3">Education</h1>
 
@@ -216,7 +189,7 @@
     </div>
 </section>
 
-<section class="custom_padding pt-5">
+<section class="custom_padding pt-5" id="life">
     <app-life-stages></app-life-stages>
 </section>
 

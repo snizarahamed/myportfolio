@@ -102,6 +102,8 @@ onBallToggle() {
     this.contactSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
-  
+  scrollToSection(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
   
 }
